@@ -4,91 +4,107 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Haridwar University Mail Verification</title>
-
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Segoe UI", sans-serif;
-        background: linear-gradient(135deg, #ffffff 0%, #e6ffe6 50%, #ffecd9 100%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+  /* Basic reset */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; font-family: "Segoe UI", Roboto, Arial, sans-serif; -webkit-font-smoothing:antialiased; }
 
-    .container {
-        background: #ffffff;
-        width: 380px;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        border-top: 6px solid #f57c00; /* orange */
-    }
+  /* Page background and safe padding for devices with notches */
+  body {
+    background: linear-gradient(135deg, #ffffff 0%, #e6ffe6 50%, #ffecd9 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: env(safe-area-inset, 16px);
+  }
 
-    .logo {
-        display: block;
-        margin: 0 auto;
-        width: 110px;
-        margin-bottom: 15px;
-    }
+  /* Container: fluid and limited by max-width */
+  .container {
+    width: 92%;
+    max-width: 380px; /* keeps similar desktop look */
+    background: #ffffff;
+    padding: 26px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border-top: 6px solid #f57c00;
+  }
 
-    h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #2e7d32; /* green */
-        font-weight: 600;
-    }
+  /* Logo + heading */
+  .logo {
+    display: block;
+    margin: 0 auto 14px auto;
+    width: 110px;
+    height: auto;
+  }
 
-    label {
-        color: #333;
-        font-weight: 500;
-    }
+  h2 {
+    text-align: center;
+    margin: 0 0 18px 0;
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.05;
+  }
 
-    input {
-        width: 100%;
-        padding: 12px;
-        margin-top: 6px;
-        margin-bottom: 18px;
-        border-radius: 8px;
-        border: 2px solid #a5d6a7; 
-        font-size: 15px;
-        outline: none;
-    }
+  label {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
 
-    input:focus {
-        border-color: #2e7d32;
-    }
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 0 0 16px 0;
+    border-radius: 8px;
+    border: 2px solid #a5d6a7;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+  }
 
-    .btn {
-        width: 100%;
-        padding: 12px;
-        background: #f57c00; /* orange */
-        color: white;
-        font-size: 16px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+  input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 4px 12px rgba(46,125,50,0.06);
+  }
 
-    .btn:hover {
-        background: #e65100;
-    }
+  .btn {
+    width: 100%;
+    padding: 12px;
+    background: #f57c00;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 
-    .footer {
-        text-align: center;
-        margin-top: 15px;
-        color: #2e7d32;
-        font-size: 14px;
-    }
+  .btn:hover { background: #e65100; }
+
+  .footer {
+    text-align: center;
+    margin-top: 14px;
+    color: #2e7d32;
+    font-size: 14px;
+  }
+
+  /* Small-screen adjustments */
+  @media (max-width: 420px) {
+    .container { padding: 18px; border-radius: 10px; }
+    .logo { width: 90px; margin-bottom: 12px; }
+    h2 { font-size: 18px; margin-bottom: 14px; }
+    input[type="email"], input[type="password"] { padding: 14px; font-size: 16px; }
+    .btn { padding: 14px; font-size: 16px; }
+  }
 </style>
-
 </head>
 <body>
 
-<div class="container">
-
+  <div class="container">
     <!-- LOGO -->
     <img src="logo.png" alt="Haridwar University Logo" class="logo">
 
@@ -97,15 +113,16 @@
 
     <!-- FORM -->
     <form>
-        <label>Email</label>
-        <input type="email" placeholder="Enter your university email" required>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="Enter your university provided email" required>
 
-        <label>Password</label>
-        <input type="password" placeholder="Enter password" required>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Enter your Password" required>
 
-        <button class="btn" type="submit">Verify Mail</button>
+      <button class="btn" type="submit">Verify Mail</button>
     </form>
-	 <div class="links" role="navigation" aria-label="auxiliary links">
+
+    <div class="links" role="navigation" aria-label="auxiliary links">
       <!-- official google recovery -->
       <a href="https://accounts.google.com/signin/recovery" target="_blank" rel="noopener">Forgot password?</a>
       <!-- privacy / help -->
@@ -114,8 +131,6 @@
     <div class="footer">
         Assisted with GoogleAuthentication
     </div>
-
-</div>
 
 </body>
 </html>
