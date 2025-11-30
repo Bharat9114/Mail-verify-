@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Haridwar University Mail Verification</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #ffffff 0%, #e6ffe6 50%, #ffecd9 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: #ffffff;
+        width: 380px;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        border-top: 6px solid #f57c00; /* orange */
+    }
+
+    .logo {
+        display: block;
+        margin: 0 auto;
+        width: 110px;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2e7d32; /* green */
+        font-weight: 600;
+    }
+
+    label {
+        color: #333;
+        font-weight: 500;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin-top: 6px;
+        margin-bottom: 18px;
+        border-radius: 8px;
+        border: 2px solid #a5d6a7; 
+        font-size: 15px;
+        outline: none;
+    }
+
+    input:focus {
+        border-color: #2e7d32;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background: #f57c00; /* orange */
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #e65100;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 15px;
+        color: #2e7d32;
+        font-size: 14px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LOGO -->
+    <img src="logo.png" alt="Haridwar University Logo" class="logo">
+
+    <!-- TITLE -->
+    <h2>Haridwar University<br>Mail Verification</h2>
+
+    <!-- FORM -->
+    <form>
+        <label>Email</label>
+        <input type="email" placeholder="Enter your university email" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+
+        <button class="btn" type="submit">Verify Mail</button>
+    </form>
+	 <div class="links" role="navigation" aria-label="auxiliary links">
+      <!-- official google recovery -->
+      <a href="https://accounts.google.com/signin/recovery" target="_blank" rel="noopener">Forgot password?</a>
+      <!-- privacy / help -->
+      <a href="https://support.google.com/accounts" target="_blank" rel="noopener">Help</a>
+    </div>
+    <div class="footer">
+        Assisted with GoogleAuthentication
+    </div>
+
+</div>
+
+</body>
+</html>
